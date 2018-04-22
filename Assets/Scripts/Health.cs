@@ -15,10 +15,13 @@ public class Health : MonoBehaviour {
 		CheckDeath();
 		UpdateHealthUI();
 	}
-	protected virtual void CheckDeath(){
+	void CheckDeath(){
 		if(m_health <= 0){
-			//game over
+			HandleDeath();
 		}
+	}
+	protected virtual void HandleDeath(){
+
 	}
 	void UpdateHealthUI(){
 		if(m_healthUI != null){

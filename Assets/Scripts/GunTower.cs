@@ -27,7 +27,7 @@ public class GunTower : MonoBehaviour {
 		m_fireTimer -= Time.deltaTime;
 	}
 	void LookAtPlayer(){
-		Vector3 planarPlayerPosition = m_target.position;
+		Vector3 planarPlayerPosition = m_target.position - transform.position;
 		planarPlayerPosition.y = 0;
 		Quaternion targetRotation = Quaternion.LookRotation(planarPlayerPosition);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * m_rotateDamping);

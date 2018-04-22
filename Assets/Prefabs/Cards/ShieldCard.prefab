@@ -153,7 +153,7 @@ MonoBehaviour:
   m_shieldPrefab: {fileID: 114044794856471910, guid: cf1c49489c34ea643943945cb2175e6f,
     type: 2}
   m_shieldLifeTime: 4
-  m_shieldPositionOffset: {x: -0.26, y: -0.35, z: 2.5}
+  m_shieldPositionOffset: {x: -0.26, y: -0.35, z: 2}
 --- !u!114 &114355680011188178
 MonoBehaviour:
   m_ObjectHideFlags: 1

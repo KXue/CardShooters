@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 136059252343964090}
   - component: {fileID: 23277719942832282}
   - component: {fileID: 114930395593945754}
+  - component: {fileID: 114590540185108876}
   m_Layer: 12
   m_Name: GunTower
   m_TagString: Untagged
@@ -96,8 +97,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517437931656494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4359146939957048}
   - {fileID: 4309036612521960}
@@ -186,6 +187,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517437931656494}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114590540185108876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517437931656494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f164ac92805644aaa6ade8d22009fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthUI: {fileID: 0}
+  m_maxHealth: 20
 --- !u!114 &114930395593945754
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4535770473277462}
   - component: {fileID: 114633670302717136}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SpawnerSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4535770473277462
 Transform:
   m_ObjectHideFlags: 1
@@ -51,11 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf442b30ce18a244ac5ae832be12a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_spawnVolume: {x: 40, y: 5, z: 40}
-  m_spawnRate: 0
-  m_spawnRateGrowth: 0
-  m_mobSize: 0
-  m_mobSizeRange: 0
+  m_spawnVolume: {x: 30, y: 0, z: 30}
+  m_spawnRate: 0.07
+  m_spawnRateGrowth: 1.01
+  m_mobSize: 2
+  m_mobSizeRange: 1
   m_spawnDefinition:
-  - spawnPrefab: {fileID: 0}
-    spawnWeight: 0
+  - spawnPrefab: {fileID: 4847928272023548, guid: 3ea977f6653d2d8458e6ab3be2b05cc4,
+      type: 2}
+    spawnWeight: 1
+  - spawnPrefab: {fileID: 4056556557755582, guid: b184558e8d4d32e469e31f7b7c66e35a,
+      type: 2}
+    spawnWeight: 2

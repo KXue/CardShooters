@@ -43,10 +43,10 @@ public class SpawnerSpawner : MonoBehaviour {
 		}
 	}
 	void SpawnSpawner(){
-		uint spawnNumber = (uint)UnityEngine.Random.Range(0, (int)m_totalSpawnWeight);
+		int spawnNumber = UnityEngine.Random.Range(0, (int)m_totalSpawnWeight);
 		Transform selectedPrefab = null;
 		foreach(SpawnDefinition def in m_spawnDefinition){
-			spawnNumber -= def.spawnWeight;
+			spawnNumber -= (int)def.spawnWeight;
 			if(spawnNumber < 0){
 				selectedPrefab = def.spawnPrefab;
 				break;
