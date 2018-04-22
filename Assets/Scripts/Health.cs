@@ -15,7 +15,7 @@ public class Health : MonoBehaviour {
 		CheckDeath();
 		UpdateHealthUI();
 	}
-	void CheckDeath(){
+	protected virtual void CheckDeath(){
 		if(m_health <= 0){
 			//game over
 		}

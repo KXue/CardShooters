@@ -17,11 +17,13 @@ public class ShootHelper
         retRay.direction = m_bulletSpawnPoint.forward;
 
         Transform cameraTransform = m_camera.transform;
-
+        string[] ignoreLayers = {"Shield", "Projectile"};
+        int layerMask = ~LayerMask.GetMask(ignoreLayers);
         RaycastHit hitInfo;
-        if (Physics.Raycast(cameraTransform.position + cameraTransform.forward * m_camera.nearClipPlane, cameraTransform.forward, out hitInfo))
+        if (Physics.Raycast(cameraTransform.position + cameraTransform.forward * m_camera.nearClipPlane, cameraTransform.forward, out hitInfo, Mathf.Infinity, layerMask))
         {
             retRay.direction = (hitInfo.point - m_bulletSpawnPoint.position).normalized;
+            Debug.Log(LayerMask.LayerToName(hitInfo.transform.gameObject.layer));
         }
         return retRay;
     }
