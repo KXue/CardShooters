@@ -6,6 +6,7 @@ public class CardStackUI : MonoBehaviour
 {
     public Transform m_cardTransform;
     public Text m_cardCountText;
+	protected bool m_defaultFaceUp = false;
 	void Start()
 	{
 		UpdateCardCount();
@@ -34,10 +35,10 @@ public class CardStackUI : MonoBehaviour
 		card.transform.localScale = new Vector3(1, 1, 1);
 		SetFace(card);
 	}
-	public virtual void SetFace(Card card){
-		card.GetComponent<CardUI>().SetFace(false);
+	public void SetFace(Card card){
+		card.GetComponent<CardUI>().SetFace(m_defaultFaceUp);
 	}
-	public virtual Card PopCardAt(uint index){
+	public Card PopCardAt(uint index){
 		Card retCard = null;
 		if(index < m_cardTransform.childCount){
             Transform cardTransform = m_cardTransform.GetChild((int)index);
@@ -51,7 +52,7 @@ public class CardStackUI : MonoBehaviour
 		return PopCardAt((uint)UnityEngine.Random.Range(0, m_cardTransform.childCount));
     }
 
-    public virtual Card[] PopAllCards(){
+    public Card[] PopAllCards(){
 		List<Card> allCards = new List<Card>();
 		foreach(Transform child in m_cardTransform){
 			allCards.Add(child.GetComponent<Card>());

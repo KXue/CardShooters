@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b5c11bd82523a49885db7b6d0f9ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_coolDownTime: 0.1
   m_bulletPrefab: {fileID: 114545021020361216, guid: 3bd540ed722f08548b39a850d1b67867,
     type: 2}
   m_bulletSpeed: 30
@@ -309,10 +310,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 150, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224888822735578352
 RectTransform:

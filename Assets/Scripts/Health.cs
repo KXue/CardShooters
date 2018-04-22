@@ -9,8 +9,6 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		m_health = m_maxHealth;
-		TakeDamage(20);
-
 	}
 	public void TakeDamage(int amount){
 		m_health = Mathf.Max(0, m_health - amount);

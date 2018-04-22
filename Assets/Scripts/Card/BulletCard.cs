@@ -4,7 +4,7 @@ using UnityEngine;
 public class BulletCard : Card
 {
     public NormalBullet m_bulletPrefab;
-    public float m_bulletSpeed = 30;
+    public float m_bulletSpeed = 60; 
     public override void Play(ShootHelper user)
     {
         Ray bulletDirection = user.GetOffsetRay();
