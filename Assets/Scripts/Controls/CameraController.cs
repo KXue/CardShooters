@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float yRot = Input.GetAxis("Mouse X") * m_mouseSensitivity;
-        float xRot = Input.GetAxis("Mouse Y") * m_mouseSensitivity;
+        float yRot = Input.GetAxis("Mouse X") * (m_mouseSensitivity * Time.deltaTime);
+        float xRot = Input.GetAxis("Mouse Y") * (m_mouseSensitivity * Time.deltaTime);
 
         transform.rotation *= Quaternion.Euler(0f, yRot, 0f);
         m_cameraTransform.rotation *= Quaternion.Euler(-xRot, 0f, 0f);

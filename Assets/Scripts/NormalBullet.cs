@@ -18,5 +18,8 @@ public class NormalBullet : ShotObject {
                 Destroy(gameObject);
             }
         }
+        else{
+            Destroy(gameObject);
+        }
     }
 }

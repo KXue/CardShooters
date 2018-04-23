@@ -23,7 +23,6 @@ public class ShootHelper
         if (Physics.Raycast(cameraTransform.position + cameraTransform.forward * m_camera.nearClipPlane, cameraTransform.forward, out hitInfo, Mathf.Infinity, layerMask))
         {
             retRay.direction = (hitInfo.point - m_bulletSpawnPoint.position).normalized;
-            Debug.Log(LayerMask.LayerToName(hitInfo.transform.gameObject.layer));
         }
         return retRay;
     }

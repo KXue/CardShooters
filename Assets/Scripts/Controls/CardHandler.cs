@@ -11,19 +11,24 @@ public class CardHandler : MonoBehaviour {
 	public Hand m_hand;
 	public CardStackUI m_discard;
 	public GameObject m_reloadText;
+	public UIHandler m_UIHandler;
 	private float m_reloadTimer = 0;
 	private float m_fireTimer = 0;
+	private AudioHandler m_audioHandler;
 	void Start () {
+		m_audioHandler = GetComponent<AudioHandler>();
         Reload();
     }
 	void Update()
 	{
-		if(Input.GetButton("Fire1")){
+		if(Input.GetButton("Fire1") && ! m_UIHandler.paused){
 			TryToFire();
         }
-		if(Input.GetButtonDown("Reload")){
-			m_discard.AddCards(m_hand.GetAllCards());
+		if(Input.GetButtonDown("Reload") && !m_UIHandler.paused){
 			Reload();
+		}
+		if(Input.GetButtonDown("Pause")){
+			m_UIHandler.paused = ! m_UIHandler.paused;
 		}
 		
 		float scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -58,12 +63,15 @@ public class CardHandler : MonoBehaviour {
 	}
 	void Reload(){
 		if(m_reloadTimer <= 0){
+            m_discard.AddCards(m_hand.GetAllCards());
+            m_audioHandler.PlaySound("Draw");
 			m_reloadTimer = m_reloadTime;
             m_reloadText.SetActive(true);
             for (int i = 0; i < m_handSize; i++)
             {
                 if (!m_deck.HasCards())
                 {
+                    m_audioHandler.PlaySound("Shuffle");
                     m_deck.AddCards(m_discard.PopAllCards());
                 }
                 m_hand.AddCard(m_deck.PopRandomCard());
